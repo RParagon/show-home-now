@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production]
+  environment = { NODE_VERSION = "18" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  VITE_SUPABASE_URL = "sua_url_do_supabase"
+  VITE_SUPABASE_ANON_KEY = "sua_chave_anonima_do_supabase" 
