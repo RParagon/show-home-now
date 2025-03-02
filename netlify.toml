@@ -11,6 +11,21 @@
   status = 200
   force = true
 
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/assets/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
 [build.environment]
   VITE_SUPABASE_URL = "sua_url_do_supabase"
   VITE_SUPABASE_ANON_KEY = "sua_chave_anonima_do_supabase"
