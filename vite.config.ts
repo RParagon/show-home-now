@@ -17,7 +17,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['framer-motion', '@headlessui/react'],
-          utils: ['lodash', 'react-toastify']
+          utils: ['lodash', 'react-toastify', 'ua-parser-js']
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -28,7 +28,23 @@ export default defineConfig({
     cssCodeSplit: true,
     assetsInlineLimit: 4096
   },
+  server: {
+    port: 3000,
+    strictPort: true
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', '@headlessui/react', 'lodash', 'react-toastify']
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom', 
+      'framer-motion', 
+      '@headlessui/react', 
+      'lodash', 
+      'react-toastify',
+      'ua-parser-js'
+    ]
   }
 })
