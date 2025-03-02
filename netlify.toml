@@ -40,4 +40,3 @@
   VITE_SUPABASE_ANON_KEY = "sua_chave_anonima_do_supabase"
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
-  CI = "true"
