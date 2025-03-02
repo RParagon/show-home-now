@@ -8,8 +8,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    minify: 'terser',
+    minify: 'esbuild',
     sourcemap: false,
+    cssMinify: true,
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
       output: {
@@ -22,6 +23,12 @@ export default defineConfig({
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]'
       }
-    }
+    },
+    target: 'es2015',
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', '@headlessui/react', 'lodash', 'react-toastify']
   }
 })
