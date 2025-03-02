@@ -9,7 +9,8 @@
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
 
 [build.environment]
   VITE_SUPABASE_URL = "sua_url_do_supabase"
-  VITE_SUPABASE_ANON_KEY = "sua_chave_anonima_do_supabase" 
+  VITE_SUPABASE_ANON_KEY = "sua_chave_anonima_do_supabase"
